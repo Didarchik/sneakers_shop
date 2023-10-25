@@ -1,12 +1,11 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, {useEffect, useState } from 'react'
 
 function Overlay({object, clicked, setClicked, setObj, price, setPrice}) {
-  
+  //console.log(object);
   function handleErase(item){
     const newItem = object.filter(obj => obj !== item);
     setObj(newItem);
   }
-  // const user = useContext(UserContext);
   return (
     <div className="overlay" style={{display: clicked ? "block" : "none"}}>
         <div className="drawer d-flex flex-column p-30">
@@ -15,12 +14,12 @@ function Overlay({object, clicked, setClicked, setObj, price, setPrice}) {
             <img className="btn" width={32} height={32} src="./img/erase.png" alt="del" onClick={() => setClicked(prev => !prev)} />
           </div>
           {object.map(item => {
-            
             return <div className="itemCart d-flex align-center">
-              <img width={75} height={75} src={item.img} alt={item.text} />
+              <img width={75} height={75} src={item.item.img} alt={item.item.text} />
               <div className="itemInfo d-flex flex-column ml-10">
-                <p>{item.text}</p>
-                <span><b>{item.price} руб.</b></span>
+                <p>{item.item.text}</p>
+                <span><b>{item.item.price} руб.</b></span>
+                <span>Количество: {item.num}</span>
             </div>
             <img className="btn" width={32} height={32} src="./img/erase.png" alt="del" onClick={() => handleErase(item)}/>
             </div>

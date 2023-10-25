@@ -1,14 +1,9 @@
 import data from './data';
-import { logDOM } from '@testing-library/react';
 import React, { useState, createContext, useContext } from "react";
 import ReactDOM from "react-dom/client";
-import {UserContext} from "./App"
 
 function Content({object, setObj, addItem}) {
   const [search, setSearch] = useState("");
-  console.log(UserContext);
-  const check = useContext(UserContext);
-  console.log(check);
   return (
     <div className='content p-30'> 
         <div className='d-flex align-center justify-between mb-30'>
@@ -21,7 +16,7 @@ function Content({object, setObj, addItem}) {
         <div className='d-flex flex-wrap'>
           {data.map((item) => {
             if (item.text.toLowerCase().includes(search.toLowerCase()))
-              return <div className='card mr-40'>
+              return <div className='card mr-40' key={item.id}>
                 <img width={133} height={112} src={item.img} alt='1' />
                 <p>{item.text}</p>
                 <div className='d-flex justify-between align-center'>
