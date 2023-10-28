@@ -1,14 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.scss';
+import './styles/index.scss';
 import App from './App';
 import Before from './Before';
 import 'macro-css';
+import {BrowserRouter} from "react-router-dom"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Before />
+    <BrowserRouter>
+      <Before />
+    </BrowserRouter>
   </React.StrictMode>
 );
 
