@@ -22,7 +22,7 @@ function Header({object, setObj}) {
         <div className='leftHeader d-flex align-center'>
           <img width={50} height={50} src='/img/logo.png' alt='logo'/>
           <div className='headerInfo pl-30 d-flex flex-column'>
-            <h3 className='text-uppercase pb-5'>React Sneakers</h3>
+            <h3 className='text-uppercase pb-5'>React Didar</h3>
             <p>Магазин лучших кроссовок</p>
           </div>
         </div>

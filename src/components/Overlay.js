@@ -21,8 +21,7 @@ function Overlay({object, clicked, setClicked, setObj, price, setPrice}) {
             <h3>Корзина</h3>
             <img className="btn" width={32} height={32} src="./img/erase.png" alt="del" onClick={() => setClicked(prev => !prev)} />
           </div>
-          { 
-            cartItems.map(item => {
+          {cartItems.map(item => {
               return <div className="itemCart d-flex align-center">
 
                 <img width={75} height={75} src={item.img} alt={item.text} />
