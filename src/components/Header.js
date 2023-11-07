@@ -29,7 +29,7 @@ function Header({object, setObj}) {
         
         <ul className='rightHeader d-flex'>
           <li className='mr-20 d-flex'>
-            <img className='bagTop' width={18} height={18} src='/img/bag.svg' onClick={handleClick} />
+            <Link to="/"><img className='bagTop' width={18} height={18} src='/img/bag.svg' onClick={handleClick} /> </Link>
             <span className="ml-5">{price}</span>
           </li>
           <li className='mr-20 d-flex'>
@@ -38,7 +38,7 @@ function Header({object, setObj}) {
           </li>
           <li className='mr-20 d-flex'>
             <img width={18} height={18} src='/img/account.svg'/>
-            <Link to="/page" replace><span className="ml-5">Профиль</span></Link>
+            <Link to="/test" ><span className="ml-5">Профиль</span></Link>
           </li>
         </ul>
       </div>

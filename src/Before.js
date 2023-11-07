@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from "react";
 import App from './App';
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import Profile from "./components/Profile";
 import axios from 'axios';
 
@@ -26,7 +26,9 @@ function Before() {
   }
   return (
     <div>
+      <Router>
         <App object={object} setObj={setObj} addItem={addItem}/> 
+      </Router>
     </div>
   )
 }
