@@ -1,9 +1,16 @@
-import data from './data';
-import React, { useState, createContext, useContext } from "react";
+import React, { useState, createContext, useContext, useEffect } from "react";
 import ReactDOM from "react-dom/client";
+import axios from "axios";
 
 function Content({object, setObj, addItem}) {
   const [search, setSearch] = useState("");
+  const [sneakers, setSneakers] = useState([]);
+  useEffect(() => {
+    axios.get("https://654662eafe036a2fa9559b2c.mockapi.io/items").then(response => {
+      setSneakers(response.data);
+    });
+  }, []);
+
   return (
     <div className='content p-30'> 
         <div className='d-flex align-center justify-between mb-30'>
@@ -14,7 +21,7 @@ function Content({object, setObj, addItem}) {
           </div>
         </div>
         <div className='d-flex flex-wrap'>
-          {data.map((item) => {
+          {sneakers.map((item) => {
             if (item.text.toLowerCase().includes(search.toLowerCase()))
               return <div className='card mr-40' key={item.id}>
                 <img width={133} height={112} src={item.img} alt='1' />

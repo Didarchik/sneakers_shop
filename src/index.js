@@ -4,7 +4,7 @@ import './styles/index.scss';
 import App from './App';
 import Before from './Before';
 import 'macro-css';
-import {BrowserRouter} from "react-router-dom"
+import {BrowserRouter, MemoryRouter} from "react-router-dom"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

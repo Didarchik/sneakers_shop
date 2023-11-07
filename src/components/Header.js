@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import Overlay from './Overlay';
+import {Link} from "react-router-dom";
+import axios from 'axios';
+
 function Header({object, setObj}) {
   const [clicked, setClicked] = useState(false);
   function handleClick(){
@@ -13,8 +16,8 @@ function Header({object, setObj}) {
   return (
       <div className="header d-flex justify-between align-center p-30">
         <Overlay 
-        object={object} clicked={clicked} setClicked={setClicked} setObj={setObj}
-        price={price} setPrice={setPrice}  
+          object={object} clicked={clicked} setClicked={setClicked} setObj={setObj}
+          price={price} setPrice={setPrice}  
         />
         <div className='leftHeader d-flex align-center'>
           <img width={50} height={50} src='/img/logo.png' alt='logo'/>
@@ -35,7 +38,7 @@ function Header({object, setObj}) {
           </li>
           <li className='mr-20 d-flex'>
             <img width={18} height={18} src='/img/account.svg'/>
-            <span className="ml-5">Профиль</span>
+            <Link to="/page" replace><span className="ml-5">Профиль</span></Link>
           </li>
         </ul>
       </div>

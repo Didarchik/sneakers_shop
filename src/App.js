@@ -5,6 +5,7 @@ import './styles/App.css';
 import Content from "./components/Content";
 import Header from "./components/Header";
 import obj from "./components/data";
+import Profile from "./components/Profile";
 
 function App({object, setObj, addItem}) {
   
@@ -13,8 +14,9 @@ function App({object, setObj, addItem}) {
         <Header object={object} setObj={setObj} />
         <Content object={object} setObj={setObj} addItem={addItem}/>
         <Routes>
-          
-        </Routes>
+          <Route path="/page" element={<Profile />} />
+          <Route path="*" element={<h1>Not found</h1>} />
+        </Routes>       
       </div>
     
   );
