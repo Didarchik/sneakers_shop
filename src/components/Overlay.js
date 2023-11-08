@@ -11,9 +11,10 @@ function Overlay({object, clicked, setClicked, setObj, price, setPrice}) {
   useEffect(() => {
     axios.get("https://654662eafe036a2fa9559b2c.mockapi.io/cart/").then(res => {
       setCartItems(res.data)
+      setObj(res.data);
     })
-  }, [object]);
-  console.log(cartItems);
+  }, [clicked]);
+  console.log(object);
   return (
     <div className="overlay" style={{display: clicked ? "block" : "none"}}>
         <div className="drawer d-flex flex-column p-30">
@@ -21,7 +22,7 @@ function Overlay({object, clicked, setClicked, setObj, price, setPrice}) {
             <h3>Корзина</h3>
             <img className="btn" width={32} height={32} src="./img/erase.png" alt="del" onClick={() => setClicked(prev => !prev)} />
           </div>
-          {cartItems.map(item => {
+          {object.map(item => {
               return <div className="itemCart d-flex align-center">
 
                 <img width={75} height={75} src={item.img} alt={item.text} />
