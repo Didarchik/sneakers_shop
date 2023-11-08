@@ -19,21 +19,21 @@ function Header({object, setObj}) {
           object={object} clicked={clicked} setClicked={setClicked} setObj={setObj}
           price={price} setPrice={setPrice}  
         />
-        <div className='leftHeader d-flex align-center'>
+        <Link to="/"><div className='leftHeader d-flex align-center'>
           <img width={50} height={50} src='/img/logo.png' alt='logo'/>
           <div className='headerInfo pl-30 d-flex flex-column'>
             <h3 className='text-uppercase pb-5'>React Didar</h3>
             <p>Магазин лучших кроссовок</p>
           </div>
         </div>
-        
+        </Link>
         <ul className='rightHeader d-flex'>
           <li className='mr-20 d-flex'>
-            <Link to="/"><img className='bagTop' width={18} height={18} src='/img/bag.svg' onClick={handleClick} /> </Link>
+            <img className='bagTop' width={18} height={18} src='/img/bag.svg' onClick={handleClick} />
             <span className="ml-5">{price}</span>
           </li>
           <li className='mr-20 d-flex'>
-            <img width={18} height={18} src='/img/like.svg'/>
+            <Link to="/items"><img width={18} height={18} src='/img/like.svg'/></Link>
             <span className="ml-5">Закладки</span>
           </li>
           <li className='mr-20 d-flex'>

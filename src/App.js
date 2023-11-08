@@ -5,7 +5,7 @@ import './styles/App.css';
 import Content from "./components/Content";
 import Header from "./components/Header";
 import obj from "./components/data";
-import Profile from "./components/Profile";
+import Ordered from "./components/Ordered";
 
 function App({object, setObj, addItem}) {
   
@@ -17,6 +17,14 @@ function App({object, setObj, addItem}) {
             <Content object={object} setObj={setObj} addItem={addItem}/>
            </>
            } />
+          <Route path="/items" element={
+            <>
+              <Header object={object} setObj={setObj} /> 
+              <Ordered object={object}/>
+            </>
+          }>
+
+          </Route>
           <Route path="/test" element={
             <>
               <Header object={object} setObj={setObj} /> 
